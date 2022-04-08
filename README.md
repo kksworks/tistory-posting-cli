@@ -334,7 +334,21 @@ tistory:
 
 ## obsidian 에서의 활용
 
+### shell plugin 을 통한 자동 포스팅 만들기
 
+obisian 에서는 shell command 플러그인을 통해서 외부의 스크립트를 실행 할 수있다.
+
+> 단, pc 에 파이썬과 위의 모듈들이 모두 설치되어있어야한다.
+
+- 해당 플러그인 : <https://github.com/Taitava/obsidian-shellcommands>
+
+해당 repo 를 `.obsidian` 폴더 안에 clone 한 후에.. shell command plugin 을 다음과같이 추가한다.
+
+```sh
+python {{vault_path}}\.obsidian\tistory-posting-cli\tistory_posting_cli.py publish {{file_path:absolute}}
+```
+
+이후에 발행하고자 하는 마크다운파일에서 위의 shell plugin 을 실행 하면 옵시디언에서 바로 티스토리로 포스팅이 가능하다.
 
 ## 추가 기능 구현 해야할 사항
 
