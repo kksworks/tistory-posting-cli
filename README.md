@@ -341,6 +341,9 @@ obisian 에서는 shell command 플러그인을 통해서 외부의 스크립트
 > 단, pc 에 파이썬과 위의 모듈들이 모두 설치되어있어야한다.
 
 - 해당 플러그인 : <https://github.com/Taitava/obsidian-shellcommands>
+  - windows 환경에서는 shell 을 powershell 5 로 설정 해야 정상동작한다.
+  - 한글이 안나올경우 <https://holjjack.tistory.com/144> / <https://torbjorn.tistory.com/550> 을 참고하여 power shell 환경을 설정한다.
+
 
 해당 repo 를 `.obsidian` 폴더 안에 clone 한 후에.. shell command plugin 을 다음과같이 추가한다.
 
