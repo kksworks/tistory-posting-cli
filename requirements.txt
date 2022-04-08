@@ -1,0 +1,4 @@
+click==8.0.4
+Markdown==3.3.6
+markdown-captions==2.1.1
+python-frontmatter==1.0.0

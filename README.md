@@ -36,8 +36,8 @@ pip install -r requirements.txt
 ### 사용법
 
 > - 프로그램을 사용하기 위해서는 두가지 선행작업이 필요하다.
->   - 환경설정 `config.ini` 설정하기 : 링크
->   - 마크다운파일의 front matter 설정하기 : 링크
+>   - 환경설정 `config.ini` 설정하기 : [링크](https://github.com/kksworks/tistory-posting-cli/blob/main/README.md#configini)
+>   - 마크다운파일의 front matter 설정하기 : [링크](https://github.com/kksworks/tistory-posting-cli/blob/main/README.md#front-matter)
 
 위의 선행작업이 완료한 후에 커맨드라인을 통해서 발행한다. (`--help` 를 통해서 지원되는 옵션과 간단한 명령어 사용법 확인가능하다.)
 
@@ -80,12 +80,28 @@ python ./tistory_posting_cli.py publish [makdown_file or folder]
   - 파일명 입력시 : 1개의 파일만 발행
   - 폴더명 입력시 : 해당 폴더를 순차적으로 마크다운 파일을 탐색하여 발행
 
-마크다운을 포스팅하기위해서는 포스팅을 위한 front matter 정보가 필요하다. 링크
+마크다운을 포스팅하기위해서는 포스팅을 위한 front matter 정보가 필요하다. [링크](https://github.com/kksworks/tistory-posting-cli/blob/main/README.md#front-matter)
 
 ### 동작 테스트
 
 `test_sample` 의 마크다운파일들을 통해서 동작테스트가 가능하다.
 
+- <https://github.com/kksworks/tistory-posting-cli/test_sample> 내의 파일들의 front matter 에서 다음의 내용들을 수정한다.
+  - `blog_name:` : 테스트하려는 티스토리 블로그이름
+  - `category:` : 게시하려는 카테고리의 이름
+
+다음의 명령어와 같이 입력한 후에 정상적으로 포스팅이 되는지 확인해보자.
+
+```sh
+python ./tistory_posting_cli.py publish ./test_sample/test_case-base-md.md
+python ./tistory_posting_cli.py publish ./test_sample/test_case-attach-img.md
+python ./tistory_posting_cli.py publish ./test_sample/test_case-link-other-md.md
+```
+
+- 테스트내용
+  - `test_case-base-md.md` : 기본 포스팅테스트
+  - `test_case-attach-img.md` : 파일 첨부 테스트
+  - `test_case-link-other-md.md` : 마크다운간 포스팅 링크 테스트
 
 ## 동작에 관한 설정
 
