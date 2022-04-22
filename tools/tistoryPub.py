@@ -271,19 +271,19 @@ class tistoryPub():
 		try :
 			with open(category_info_file, 'r', encoding='utf-8') as json_data:
 				category_info = json.load(json_data)
-			assert attach_info[blog_name] is not None
+			assert category_info[blog_name] is not None
 		# load category info
 		except :
-			attach_info = self.update_category_info(blog_name)
+			category_info = self.update_category_info(blog_name)
 			
 		try :
 			# get from category name
-			for category_dic in attach_info[blog_name] : 
+			for category_dic in category_info[blog_name] : 
 				if category_dic['name'] == category_id :
 					return category_dic['id']
 
 			# get from category id (number)
-			for category_dic in attach_info[blog_name] : 
+			for category_dic in category_info[blog_name] : 
 				if category_dic['id'] == str(category_id) :
 					return category_dic['id']
 			return '0' # default category
