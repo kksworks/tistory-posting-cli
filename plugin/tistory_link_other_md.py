@@ -25,6 +25,12 @@ def pre_proc(ctx_info, md_contents, **kwargs):
 		else :
 			conv_md_syntax_file_name = md_syntax_file_name.replace('\\','/')
 
+		if md_syntax_file_name.lower().find('https://') >= 0 :
+			continue
+
+		if md_syntax_file_name.lower().find('http://') >= 0 :
+			continue
+
 		# make real file path and valid file extention
 		# - TODO: support specific attach folder (ctx_info)
 		real_file_path = pathlib.Path(pathlib.PurePath(ctx_info['cur_working_info']['cur_abpath_folder'], conv_md_syntax_file_name))
